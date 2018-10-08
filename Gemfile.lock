@@ -218,6 +218,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.21)
+  popper_js (~> 1.14.3)
   pry-byebug
   pry-rails
   puma
