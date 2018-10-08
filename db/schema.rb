@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_210437) do
+ActiveRecord::Schema.define(version: 2018_10_08_212743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2018_10_08_210437) do
     t.string "amount_currency", default: "EUR", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "paiements", force: :cascade do |t|
+    t.jsonb "payment"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_paiements_on_order_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -83,5 +91,6 @@ ActiveRecord::Schema.define(version: 2018_10_08_210437) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "paiements", "orders"
   add_foreign_key "photos", "products"
 end
