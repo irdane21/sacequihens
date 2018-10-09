@@ -1,0 +1,7 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.input :sku, placeholder: 'Nom du produit' %>
+  <%= f.input :description%>
+  <%= f.input :detailtechniques %>
+  <%= f.input :price_cents %>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>
