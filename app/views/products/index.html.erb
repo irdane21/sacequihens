@@ -1,6 +1,7 @@
 <div class="container">
   <h1> Je suis la page index </h1>
   <% @products.each do |product| %>
-    <%= product.name %>
+    <%= product.sku %>
+    <%= link_to "look at it", product_path(product.id),class: "btn btn-primary" %>
   <% end %>
 </div>
