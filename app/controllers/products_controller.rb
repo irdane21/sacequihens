@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @orderdetail = OrderDetail.new
     authorize @product
   end
 
