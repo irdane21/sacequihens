@@ -2,11 +2,10 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :update, :edit]
 
   def index
-    @product = policy_scope(Product)
+    @products = policy_scope(Product)
   end
 
   def show
-    authorize @product
   end
 
   def new

@@ -6,7 +6,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    true
   end
 
   def new?
