@@ -3,6 +3,7 @@ class OrderDetailsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @order_detail = OrderDetail.new
+    session[:current_user] = @user
 
     if current_user.orders.where(:status == 1)
       @order = current_user.orders.where(:status == 1)

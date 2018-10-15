@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <% @order.order_details.each do |order_detail| %>
+        <p>
+          <%= order_detail.sku %>
+        </p>
+        <p>
+          <%= order_detail.price_each_cents * order_detail.quantity %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
