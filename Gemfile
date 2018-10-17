@@ -21,6 +21,7 @@ gem 'webpacker'
 gem 'money-rails'
 gem 'stripe'
 gem 'pundit'
+gem 'activerecord-session_store'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
