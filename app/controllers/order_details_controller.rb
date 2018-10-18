@@ -3,10 +3,11 @@ class OrderDetailsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @order_detail = OrderDetail.new
-    session[:current_user] = @user
+    session[:user_id] = @current_user.id
+    User.find(session[:user_id])
 
-    if current_user.orders.where(:status == 1)
-      @order = current_user.orders.where(:status == 1)
+    if session[:current_user_id] == 1
+      @order = session[:current_user_id].orders.where(:status == 1)
       @order_detail.product_sku = @product.sku
       @order_detail.product_id = @product.id
       @order.detail.quantity = params[:quantity]
@@ -21,6 +22,7 @@ class OrderDetailsController < ApplicationController
       end
 
     else
+      session[:current_user_id] = 1
       @order  = Order.new(amount_cents: @product.price, status: 1, user: current_user)
       authorize @order
 

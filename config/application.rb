@@ -22,3 +22,8 @@ module Sacequihens
     # the framework and any gems in your application.
   end
 end
+
+# ActiveRecord::SessionStore::Session.table_name = 'sessions'
+# ActiveRecord::SessionStore::Session.primary_key = 'session_id'
+# ActiveRecord::SessionStore::Session.data_column_name = 'data'
+# ActiveRecord::SessionStore::Session.serializer = :json
