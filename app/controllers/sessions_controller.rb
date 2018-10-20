@@ -3,6 +3,6 @@ class SessionsController < ApplicationController
   attr_accessor :data
 
   def create
-    session[:current_user_id] = @user.id
+    @session[:current_user_id] = @user.id
   end
 end
