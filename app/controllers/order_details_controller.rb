@@ -3,7 +3,7 @@ class OrderDetailsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @order_detail = OrderDetail.new
-
+    raise
 
     if session[:current_user_id]
       @order = session[:current_user_id].orders.where(:status == 1)
@@ -21,7 +21,7 @@ class OrderDetailsController < ApplicationController
       end
 
     else
-      @session = Session.new
+
       @order  = Order.new(amount_cents: @product.price, status: 1, user: current_user)
       authorize @order
 
