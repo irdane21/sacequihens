@@ -24,6 +24,7 @@ module Sacequihens
     ActiveRecord::SessionStore::Session.primary_key = 'session_id'
     ActiveRecord::SessionStore::Session.data_column_name = 'data'
     ActiveRecord::SessionStore::Session.serializer = :json
+    ActionDispatch::Session::ActiveRecordStore.session_class = MySessionClass
   end
 end
 

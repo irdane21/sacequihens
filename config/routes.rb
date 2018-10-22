@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :order_details
   end
   resources :orders, only: [:show, :create]
+  resources :sessions, only: [:create, :find_by_session_id]
+  resources :users, only: [:index]
 end
